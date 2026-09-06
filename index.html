@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zul Labs — AI Product Studio</title>
-<meta name="description" content="Zul Labs is an AI product studio that turns ideas into shipped products. Full-stack engineering, AI integration, and product design — 21 products shipped across enterprise, consumer, and developer tools.">
+<meta name="description" content="Zul Labs is an AI product studio that turns ideas into shipped products. Full-stack engineering, AI integration, and product design — 20 products shipped across enterprise, consumer, and developer tools.">
 <meta name="keywords" content="AI product studio, full-stack developer, Flutter developer, React developer, AI integration, Firebase, Indonesia, Zulhendra, Zul Labs">
 <meta name="author" content="Zulhendra">
 <meta name="robots" content="index, follow">
@@ -11,13 +11,13 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zulfflow.github.io/zullabs/">
 <meta property="og:title" content="Zul Labs — AI Product Studio">
-<meta property="og:description" content="We turn ideas into shipped products. Full-stack engineering, AI integration, and product design — 21 products shipped.">
+<meta property="og:description" content="We turn ideas into shipped products. Full-stack engineering, AI integration, and product design — 20 products shipped.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?w=1200&h=630&fit=crop&auto=format">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zul Labs — AI Product Studio">
-<meta name="twitter:description" content="We turn ideas into shipped products. Full-stack engineering, AI integration, and product design — 21 products shipped.">
+<meta name="twitter:description" content="We turn ideas into shipped products. Full-stack engineering, AI integration, and product design — 20 products shipped.">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1697577418970-95d99b5a55cf?w=1200&h=630&fit=crop&auto=format">
 
 <!-- Structured Data (JSON-LD) -->
@@ -123,6 +123,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
 .nav-cta:hover{background:var(--amber);transform:translateY(-1px);text-decoration:none!important;color:var(--bg)!important}
 .nav-toggle{display:none;width:28px;height:28px;flex-direction:column;justify-content:center;gap:5px;padding:2px}
 .nav-toggle span{display:block;width:100%;height:2px;background:var(--text);border-radius:2px;transition:transform .4s cubic-bezier(.76,0,.24,1),opacity .3s}
+.lang-btn{display:flex;align-items:center;gap:4px;font-size:.75rem;font-weight:600;color:var(--text-3);padding:6px 12px;border-radius:8px;transition:color .2s,background .2s;letter-spacing:.04em;text-transform:uppercase}
+.lang-btn:hover{color:var(--text);background:var(--teal-g)}
+.lang-active{color:var(--teal)}
+.lang-sep{color:var(--text-3);opacity:.4;margin:0 1px}
+.lang-inactive{color:var(--text-3)}
 .theme-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:8px;color:var(--text-3);transition:color .2s,background .2s}
 .theme-btn:hover{color:var(--text);background:var(--teal-g)}
 .theme-btn svg{width:18px;height:18px}
@@ -402,15 +407,16 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
   <div class="nav-in">
     <span class="nav-brand">ZUL<em>LABS</em></span>
     <div class="nav-links" id="navLinks">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#stack">Stack</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
+      <button class="lang-btn" aria-label="Toggle language" id="langBtn"><span class="lang-active">EN</span><span class="lang-sep">|</span><span class="lang-inactive">ID</span></button>
       <button class="theme-btn" aria-label="Toggle theme" id="themeBtn">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <a class="nav-cta" href="#contact">Start a Project</a>
+      <a class="nav-cta" href="#contact" data-i18n="nav.cta">Start a Project</a>
     </div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -423,18 +429,18 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
 <!-- ═══ HERO (full viewport, word slider) ═══ -->
 <section class="hero">
   <div class="wrap hero-inner">
-    <div class="hero-chip">AI Product Studio</div>
+    <div class="hero-chip" data-i18n="hero.chip">AI Product Studio</div>
     <h1>
-      We build<br>
+      <span data-i18n="hero.prefix">We build</span><br>
       <span class="word-slider"><span class="word-track">
-        <span>shipped products.</span>
-        <span>AI systems.</span>
-        <span>mobile apps.</span>
-        <span>dev tools.</span>
-        <span>shipped products.</span>
+        <span data-i18n="hero.w1">shipped products.</span>
+        <span data-i18n="hero.w2">AI systems.</span>
+        <span data-i18n="hero.w3">mobile apps.</span>
+        <span data-i18n="hero.w4">dev tools.</span>
+        <span data-i18n="hero.w5">shipped products.</span>
       </span></span>
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" data-i18n="hero.sub">
       From napkin sketches to production-ready systems.
       Full-stack engineering, AI integration, and product design
       — we build what others say is too complex.
@@ -442,11 +448,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
     <div class="hero-actions">
       <a class="btn btn--primary" href="#contact">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4z"/></svg>
-        Start a Project
+        <span data-i18n="hero.cta1">Start a Project</span>
       </a>
       <a class="btn btn--glass" href="#work">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        View Our Work
+        <span data-i18n="hero.cta2">View Our Work</span>
       </a>
     </div>
   </div>
@@ -455,8 +461,8 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
 <!-- ═══ TRUST MARQUEE ═══ -->
 <div class="trust">
   <div class="trust-track">
-    <span>PT PLN (Persero)</span><span>UP3 Sibolga</span><span>UID Sumatera Utara</span><span>Upwork SEA</span><span>Institut Teknologi PLN</span><span>21 Products Shipped</span><span>5 Platforms</span><span>15+ Tech Stacks</span>
-    <span>PT PLN (Persero)</span><span>UP3 Sibolga</span><span>UID Sumatera Utara</span><span>Upwork SEA</span><span>Institut Teknologi PLN</span><span>21 Products Shipped</span><span>5 Platforms</span><span>15+ Tech Stacks</span>
+    <span>PT PLN (Persero)</span><span>UP3 Sibolga</span><span>UID Sumatera Utara</span><span>Upwork SEA</span><span>Institut Teknologi PLN</span><span data-i18n="trust.count">20 Products Shipped</span><span data-i18n="trust.platforms">5 Platforms</span><span data-i18n="trust.stacks">15+ Tech Stacks</span>
+    <span>PT PLN (Persero)</span><span>UP3 Sibolga</span><span>UID Sumatera Utara</span><span>Upwork SEA</span><span>Institut Teknologi PLN</span><span data-i18n="trust.count2">20 Products Shipped</span><span data-i18n="trust.platforms2">5 Platforms</span><span data-i18n="trust.stacks2">15+ Tech Stacks</span>
   </div>
 </div>
 
@@ -464,37 +470,37 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
 <section class="sect" id="services">
   <div class="wrap">
     <div class="reveal">
-      <div class="sh-label">What We Do</div>
-      <h2 class="sh-title">Four pillars to ship your product.</h2>
-      <p class="sh-sub">We handle the full journey — from understanding your problem to launching a system your users rely on.</p>
+      <div class="sh-label" data-i18n="svc.label">What We Do</div>
+      <h2 class="sh-title" data-i18n="svc.title">Four pillars to ship your product.</h2>
+      <p class="sh-sub" data-i18n="svc.sub">We handle the full journey — from understanding your problem to launching a system your users rely on.</p>
     </div>
     <div class="svc-grid">
       <div class="glow-card reveal d1">
         <div class="glow-card-inner">
           <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
-          <h3>Ideation & Discovery</h3>
-          <p>We listen, research, and map your idea into a clear product blueprint — scope, architecture, and a build plan you can trust.</p>
+          <h3 data-i18n="svc1.t">Ideation & Discovery</h3>
+          <p data-i18n="svc1.d">We listen, research, and map your idea into a clear product blueprint — scope, architecture, and a build plan you can trust.</p>
         </div>
       </div>
       <div class="glow-card reveal d2">
         <div class="glow-card-inner">
           <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <h3>Design & Engineering</h3>
-          <p>Full-stack builds across mobile, web, and desktop. Flutter, React, Python, Rust — we pick the right tool for the job.</p>
+          <h3 data-i18n="svc2.t">Design & Engineering</h3>
+          <p data-i18n="svc2.d">Full-stack builds across mobile, web, and desktop. Flutter, React, Python, Rust — we pick the right tool for the job.</p>
         </div>
       </div>
       <div class="glow-card reveal d3">
         <div class="glow-card-inner">
           <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 3 2 6h4c0-3 2-4 2-6a4 4 0 0 0-4-4z"/><rect x="9" y="18" width="6" height="2" rx="1"/><rect x="10" y="22" width="4" height="1" rx=".5"/><line x1="12" y1="12" x2="12" y2="16"/></svg></div>
-          <h3>AI Integration</h3>
-          <p>Embed intelligence that matters — Claude, Gemini, Whisper, computer vision, and custom models woven into your product.</p>
+          <h3 data-i18n="svc3.t">AI Integration</h3>
+          <p data-i18n="svc3.d">Embed intelligence that matters — Claude, Gemini, Whisper, computer vision, and custom models woven into your product.</p>
         </div>
       </div>
       <div class="glow-card reveal d4">
         <div class="glow-card-inner">
           <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-          <h3>Launch & Scale</h3>
-          <p>Cloud deployment, monitoring, and iterative improvement. We don't just ship — we make sure it stays running.</p>
+          <h3 data-i18n="svc4.t">Launch & Scale</h3>
+          <p data-i18n="svc4.d">Cloud deployment, monitoring, and iterative improvement. We don't just ship — we make sure it stays running.</p>
         </div>
       </div>
     </div>
@@ -506,14 +512,14 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
   <div class="wrap">
     <div class="work-header reveal">
       <div>
-        <div class="sh-label">Our Work</div>
-        <h2 class="sh-title">21 Products Shipped.</h2>
+        <div class="sh-label" data-i18n="work.label">Our Work</div>
+        <h2 class="sh-title" data-i18n="work.title">20 Products Shipped.</h2>
       </div>
       <div class="wf-wrap">
-        <button class="wf-btn active" data-filter="all">All</button>
-        <button class="wf-btn" data-filter="enterprise">Enterprise</button>
-        <button class="wf-btn" data-filter="product">Products</button>
-        <button class="wf-btn" data-filter="devtools">Dev Tools</button>
+        <button class="wf-btn active" data-filter="all" data-i18n="work.all">All</button>
+        <button class="wf-btn" data-filter="enterprise" data-i18n="work.enterprise">Enterprise</button>
+        <button class="wf-btn" data-filter="product" data-i18n="work.product">Products</button>
+        <button class="wf-btn" data-filter="devtools" data-i18n="work.devtools">Dev Tools</button>
       </div>
     </div>
 
@@ -525,11 +531,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-badge">Live</span>
           <span class="wk-img-name">TERANG</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">TERANG</h3>
-          <p class="wk-desc">Satellite-based rural electrification platform. Dark-spot detection, GIS mapping of 240+ locations across 10 service areas.</p>
+          <p class="wk-desc" data-i18n="p.terang">Satellite-based rural electrification platform. Dark-spot detection, GIS mapping of 240+ locations across 10 service areas.</p>
           <div class="wk-tech"><span>React</span><span>Flutter</span><span>Firebase</span><span>MapLibre GL</span><span>Python</span></div>
         </div>
       </article>
@@ -539,11 +545,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop&auto=format" alt="SIMPUL" loading="lazy">
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-name">SIMPUL</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">SIMPUL</h3>
-          <p class="wk-desc">Steiner tree optimization for medium-voltage grid expansion. Cost surface analysis across 41,000+ candidates.</p>
+          <p class="wk-desc" data-i18n="p.simpul">Steiner tree optimization for medium-voltage grid expansion. Cost surface analysis across 41,000+ candidates.</p>
           <div class="wk-tech"><span>Python</span><span>NetworkX</span><span>GeoPandas</span><span>Rasterio</span></div>
         </div>
       </article>
@@ -553,11 +559,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format" alt="Risk Model" loading="lazy">
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-name">Risk Model</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">Risk Model</h3>
-          <p class="wk-desc">Monte Carlo simulation quantifying investment risk. Zone-calibrated cost distributions validated against actual budgets.</p>
+          <p class="wk-desc" data-i18n="p.risk">Monte Carlo simulation quantifying investment risk. Zone-calibrated cost distributions validated against actual budgets.</p>
           <div class="wk-tech"><span>Python</span><span>Monte Carlo</span><span>Data Viz</span></div>
         </div>
       </article>
@@ -567,11 +573,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop&auto=format" alt="SIGAP" loading="lazy">
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-name">SIGAP</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">SIGAP</h3>
-          <p class="wk-desc">Survey compliance gateway with magic-link tokens, screenshot verification, WhatsApp blasts, and real-time leaderboard.</p>
+          <p class="wk-desc" data-i18n="p.sigap">Survey compliance gateway with magic-link tokens, screenshot verification, WhatsApp blasts, and real-time leaderboard.</p>
           <div class="wk-tech"><span>Next.js</span><span>Firebase</span><span>Framer Motion</span><span>WhatsApp API</span></div>
         </div>
       </article>
@@ -581,11 +587,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1622612023350-b15f063eabe6?w=600&h=400&fit=crop&auto=format" alt="SIMK3" loading="lazy">
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-name">SIMK3</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">SIMK3</h3>
-          <p class="wk-desc">HSE management for field technicians. Safety patrols, inspections, working permits, and offline-first photo sync.</p>
+          <p class="wk-desc" data-i18n="p.simk3">HSE management for field technicians. Safety patrols, inspections, working permits, and offline-first photo sync.</p>
           <div class="wk-tech"><span>Flutter</span><span>Firebase</span><span>Riverpod</span><span>GoRouter</span></div>
         </div>
       </article>
@@ -595,11 +601,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://plus.unsplash.com/premium_photo-1682125948844-e2dc8996b0f0?w=600&h=400&fit=crop&auto=format" alt="AmanPatroli" loading="lazy">
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-name">AmanPatroli</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">AmanPatroli</h3>
-          <p class="wk-desc">Security patrol monitoring with QR checkpoints, AES-encrypted offline storage, 11-role access, and incident reporting.</p>
+          <p class="wk-desc" data-i18n="p.amanpatroli">Security patrol monitoring with QR checkpoints, AES-encrypted offline storage, 11-role access, and incident reporting.</p>
           <div class="wk-tech"><span>Flutter</span><span>Firebase</span><span>Cloud Functions</span><span>Hive</span></div>
         </div>
       </article>
@@ -609,27 +615,12 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1587813369290-091c9d432daf?w=600&h=400&fit=crop&auto=format" alt="SIMKAR" loading="lazy">
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-name">SIMKAR</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">SIMKAR</h3>
-          <p class="wk-desc">Fleet management with real-time GPS, pre-trip inspections, digital trip letters with QR, and automated PDF reports.</p>
+          <p class="wk-desc" data-i18n="p.simkar">Fleet management with real-time GPS, pre-trip inspections, digital trip letters with QR, and automated PDF reports.</p>
           <div class="wk-tech"><span>Flutter</span><span>Firebase</span><span>Mapbox</span><span>PDF</span></div>
-        </div>
-      </article>
-
-      <article class="wk reveal" data-cat="enterprise">
-        <div class="wk-img" style="--_g:linear-gradient(135deg,#0891b2,#155e75)">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format" alt="SiJemput" loading="lazy">
-          <span class="wk-img-cat">Enterprise</span>
-          <span class="wk-img-badge">Live</span>
-          <span class="wk-img-name">SiJemput</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
-        </div>
-        <div class="wk-body">
-          <h3 class="wk-name">SiJemput</h3>
-          <p class="wk-desc">Seven-stage workflow tracker with KPI dashboards, funnel charts, batch Excel import, and real-time progress updates.</p>
-          <div class="wk-tech"><span>Flutter Web</span><span>Firebase</span><span>Riverpod</span><span>GoRouter</span></div>
         </div>
       </article>
 
@@ -639,11 +630,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-badge">Live</span>
           <span class="wk-img-name">Think Tank</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">Think Tank Portal</h3>
-          <p class="wk-desc">Innovation portal with AI-powered PRD parsing, idea submission, evaluation forums, and multi-level role-based access.</p>
+          <p class="wk-desc" data-i18n="p.thinktank">Innovation portal with AI-powered PRD parsing, idea submission, evaluation forums, and multi-level role-based access.</p>
           <div class="wk-tech"><span>React</span><span>TypeScript</span><span>Firebase</span><span>OpenAI</span></div>
         </div>
       </article>
@@ -653,11 +644,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1615461066159-fea0960485d5?w=600&h=400&fit=crop&auto=format" alt="Blood Connect" loading="lazy">
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-name">Blood Connect</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">Pandan Blood Connect</h3>
-          <p class="wk-desc">Hospital blood bank inventory with real-time stock monitoring, QR/barcode scanning, and Cloud Firestore sync.</p>
+          <p class="wk-desc" data-i18n="p.bloodconnect">Hospital blood bank inventory with real-time stock monitoring, QR/barcode scanning, and Cloud Firestore sync.</p>
           <div class="wk-tech"><span>Flutter</span><span>Firebase</span><span>QR Scanner</span></div>
         </div>
       </article>
@@ -667,11 +658,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1552879890-3a06dd3a06c2?w=600&h=400&fit=crop&auto=format" alt="TL K3 Tool" loading="lazy">
           <span class="wk-img-cat">Enterprise</span>
           <span class="wk-img-name">TL K3 Tool</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">TL K3 Tool</h3>
-          <p class="wk-desc">Safety dashboard with 19-criteria Matlev tracker, AI assistant with function calling, and 24+ document templates.</p>
+          <p class="wk-desc" data-i18n="p.tlk3">Safety dashboard with 19-criteria Matlev tracker, AI assistant with function calling, and 24+ document templates.</p>
           <div class="wk-tech"><span>HTML/JS</span><span>ApexCharts</span><span>Ollama</span><span>OpenRouter</span></div>
         </div>
       </article>
@@ -681,11 +672,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1714779573250-36242918e044?w=600&h=400&fit=crop&auto=format" alt="ZuView" loading="lazy">
           <span class="wk-img-cat">Product</span>
           <span class="wk-img-name">ZuView</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">ZuView</h3>
-          <p class="wk-desc">WiFi spatial sensing — detect presence and track movement through walls. Rust core, ESP32 firmware, desktop/mobile apps.</p>
+          <p class="wk-desc" data-i18n="p.zuview">WiFi spatial sensing — detect presence and track movement through walls. Rust core, ESP32 firmware, desktop/mobile apps.</p>
           <div class="wk-tech"><span>Rust</span><span>Python</span><span>ESP32</span><span>Tauri</span><span>PyTorch</span></div>
         </div>
       </article>
@@ -696,11 +687,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <span class="wk-img-cat">Product</span>
           <span class="wk-img-badge">Live</span>
           <span class="wk-img-name">TitikBilas</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">TitikBilas</h3>
-          <p class="wk-desc">Multi-tenant SaaS laundry management with POS, Kanban tracking, courier dispatch, AI advisor, and Midtrans payments.</p>
+          <p class="wk-desc" data-i18n="p.titikbilas">Multi-tenant SaaS laundry management with POS, Kanban tracking, courier dispatch, AI advisor, and Midtrans payments.</p>
           <div class="wk-tech"><span>React</span><span>Firebase</span><span>Flutter</span><span>Midtrans</span><span>Claude AI</span></div>
         </div>
       </article>
@@ -710,11 +701,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1716741011671-db4d7c6a8293?w=600&h=400&fit=crop&auto=format" alt="Movionics" loading="lazy">
           <span class="wk-img-cat">Product</span>
           <span class="wk-img-name">Movionics</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">Movionics</h3>
-          <p class="wk-desc">Motorcycle touring cockpit with GPS telemetry, five nav modes, offline maps for 10 ASEAN countries, and dashcam.</p>
+          <p class="wk-desc" data-i18n="p.movionics">Motorcycle touring cockpit with GPS telemetry, five nav modes, offline maps for 10 ASEAN countries, and dashcam.</p>
           <div class="wk-tech"><span>Flutter</span><span>Mapbox GL</span><span>Firebase</span><span>SQLite</span></div>
         </div>
       </article>
@@ -724,11 +715,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1509869175650-a1d97972541a?w=600&h=400&fit=crop&auto=format" alt="OSN-GO" loading="lazy">
           <span class="wk-img-cat">Product</span>
           <span class="wk-img-name">OSN-GO</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">OSN-GO</h3>
-          <p class="wk-desc">Adaptive learning for Indonesia's Science Olympiad. Socratic AI tutor, Elo scoring, and 1,000+ official questions.</p>
+          <p class="wk-desc" data-i18n="p.osngo">Adaptive learning for Indonesia's Science Olympiad. Socratic AI tutor, Elo scoring, and 1,000+ official questions.</p>
           <div class="wk-tech"><span>React</span><span>TypeScript</span><span>Firebase</span><span>Claude API</span></div>
         </div>
       </article>
@@ -738,11 +729,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1675430428298-ecd1827c18fd?w=600&h=400&fit=crop&auto=format" alt="BeGeNoteAI" loading="lazy">
           <span class="wk-img-cat">Product</span>
           <span class="wk-img-name">BeGeNoteAI</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">BeGeNoteAI</h3>
-          <p class="wk-desc">AI voice intelligence — record, transcribe via Groq Whisper, analyze with Gemini. Summaries, action items, mind maps.</p>
+          <p class="wk-desc" data-i18n="p.begenoteai">AI voice intelligence — record, transcribe via Groq Whisper, analyze with Gemini. Summaries, action items, mind maps.</p>
           <div class="wk-tech"><span>Flutter</span><span>Firebase</span><span>Cloud Functions</span><span>Groq</span></div>
         </div>
       </article>
@@ -752,11 +743,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1700085626695-6532f02cc961?w=600&h=400&fit=crop&auto=format" alt="AI Arena" loading="lazy">
           <span class="wk-img-cat">Product</span>
           <span class="wk-img-name">AI Arena</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">AI Arena Battle</h3>
-          <p class="wk-desc">Auto-battler where AI generates characters from text prompts. Balanced PvP, pet care mechanics, and matchmaking.</p>
+          <p class="wk-desc" data-i18n="p.aiarena">Auto-battler where AI generates characters from text prompts. Balanced PvP, pet care mechanics, and matchmaking.</p>
           <div class="wk-tech"><span>Unity</span><span>Firebase</span><span>Cloud Functions</span><span>Gemini</span></div>
         </div>
       </article>
@@ -767,11 +758,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <span class="wk-img-cat">Dev Tools</span>
           <span class="wk-img-badge">Released</span>
           <span class="wk-img-name">GasCode</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">GasCode</h3>
-          <p class="wk-desc">AI coding agent with 19 tools, 24 skills, 20+ providers, and workflow engine. CLI, TUI, and Electron desktop.</p>
+          <p class="wk-desc" data-i18n="p.gascode">AI coding agent with 19 tools, 24 skills, 20+ providers, and workflow engine. CLI, TUI, and Electron desktop.</p>
           <div class="wk-tech"><span>Bun</span><span>TypeScript</span><span>Effect-TS</span><span>SolidJS</span><span>Electron</span></div>
         </div>
       </article>
@@ -782,11 +773,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <span class="wk-img-cat">Dev Tools</span>
           <span class="wk-img-badge">Live</span>
           <span class="wk-img-name">SupervisiAja</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">SupervisiAja</h3>
-          <p class="wk-desc">AI product dev platform with adaptive Smart Chat, code gen, BYOK encryption, and device-flow OAuth for CLI auth.</p>
+          <p class="wk-desc" data-i18n="p.supervisiai">AI product dev platform with adaptive Smart Chat, code gen, BYOK encryption, and device-flow OAuth for CLI auth.</p>
           <div class="wk-tech"><span>React</span><span>TypeScript</span><span>Firebase</span><span>Cloud Functions</span></div>
         </div>
       </article>
@@ -796,11 +787,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <img src="https://images.unsplash.com/photo-1655635643617-72e0b62b9278?w=600&h=400&fit=crop&auto=format" alt="JARVIS v4" loading="lazy">
           <span class="wk-img-cat">Dev Tools</span>
           <span class="wk-img-name">JARVIS v4</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">JARVIS v4</h3>
-          <p class="wk-desc">Three-layer AI executive assistant — MCP tool servers, DAG executor, and voice-enabled web with multi-persona routing.</p>
+          <p class="wk-desc" data-i18n="p.jarvis">Three-layer AI executive assistant — MCP tool servers, DAG executor, and voice-enabled web with multi-persona routing.</p>
           <div class="wk-tech"><span>Python</span><span>FastAPI</span><span>SQLite</span><span>Edge-TTS</span><span>Groq</span></div>
         </div>
       </article>
@@ -811,11 +802,11 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
           <span class="wk-img-cat">Dev Tools</span>
           <span class="wk-img-badge">Live</span>
           <span class="wk-img-name">GasPDF</span>
-          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Details</span></div>
+          <div class="wk-img-overlay"><span class="wk-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg><span data-i18n="work.viewdetails">View Details</span></span></div>
         </div>
         <div class="wk-body">
           <h3 class="wk-name">GasPDF</h3>
-          <p class="wk-desc">Client-side PDF toolkit with 19 tools — merge, split, OCR, sign, AI summary. Zero uploads, 100% browser-based.</p>
+          <p class="wk-desc" data-i18n="p.gaspdf">Client-side PDF toolkit with 19 tools — merge, split, OCR, sign, AI summary. Zero uploads, 100% browser-based.</p>
           <div class="wk-tech"><span>React</span><span>pdf-lib</span><span>Tesseract.js</span><span>jsPDF</span><span>OpenRouter</span></div>
         </div>
       </article>
@@ -828,19 +819,19 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
 <section class="sect" id="about">
   <div class="wrap">
     <div class="reveal">
-      <div class="sh-label">About</div>
-      <h2 class="sh-title">Built by an engineer who ships.</h2>
+      <div class="sh-label" data-i18n="about.label">About</div>
+      <h2 class="sh-title" data-i18n="about.title">Built by an engineer who ships.</h2>
     </div>
     <div class="about-grid reveal">
       <div class="about-text">
-        <p><strong>Zul Labs</strong> is the studio practice of <strong>Zulhendra</strong> — a full-stack engineer and AI developer with 15 years at PT PLN, Indonesia's national power utility. Currently serving as Officer K3LK at UP3 Sibolga while pursuing a Master's in Electrical Engineering at Institut Teknologi PLN.</p>
-        <p style="margin-top:16px">From enterprise systems that digitize grid operations to consumer products and developer tools — we bring the same rigor to every build. If you have an idea and need someone who can take it from concept to production, we're your team.</p>
+        <p data-i18n-html="about.p1"><strong>Zul Labs</strong> is the studio practice of <strong>Zulhendra</strong> — a full-stack engineer and AI developer with 15 years at PT PLN, Indonesia's national power utility. Currently serving as Officer K3LK at UP3 Sibolga while pursuing a Master's in Electrical Engineering at Institut Teknologi PLN.</p>
+        <p style="margin-top:16px" data-i18n-html="about.p2">From enterprise systems that digitize grid operations to consumer products and developer tools — we bring the same rigor to every build. If you have an idea and need someone who can take it from concept to production, we're your team.</p>
       </div>
       <div class="about-stats">
-        <div class="about-stat"><div class="about-stat-val">21</div><div class="about-stat-lbl">Projects Shipped</div></div>
-        <div class="about-stat"><div class="about-stat-val">5</div><div class="about-stat-lbl">Platforms</div></div>
-        <div class="about-stat"><div class="about-stat-val">15<span class="unit">+</span></div><div class="about-stat-lbl">Tech Stacks</div></div>
-        <div class="about-stat"><div class="about-stat-val">15<span class="unit">yr</span></div><div class="about-stat-lbl">Experience</div></div>
+        <div class="about-stat"><div class="about-stat-val">20</div><div class="about-stat-lbl" data-i18n="about.s1">Projects Shipped</div></div>
+        <div class="about-stat"><div class="about-stat-val">5</div><div class="about-stat-lbl" data-i18n="about.s2">Platforms</div></div>
+        <div class="about-stat"><div class="about-stat-val">15<span class="unit">+</span></div><div class="about-stat-lbl" data-i18n="about.s3">Tech Stacks</div></div>
+        <div class="about-stat"><div class="about-stat-val">15<span class="unit">yr</span></div><div class="about-stat-lbl" data-i18n="about.s4">Experience</div></div>
       </div>
     </div>
   </div>
@@ -850,8 +841,8 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
 <section class="sect" id="stack">
   <div class="wrap">
     <div class="reveal">
-      <div class="sh-label">Technology</div>
-      <h2 class="sh-title">We pick the right tool for the job.</h2>
+      <div class="sh-label" data-i18n="stack.label">Technology</div>
+      <h2 class="sh-title" data-i18n="stack.title">We pick the right tool for the job.</h2>
     </div>
     <div class="stack-grid reveal">
       <div class="stack-group"><div class="stack-title">Mobile & IoT</div><div class="stack-pills"><span>Flutter</span><span>Dart</span><span>Riverpod</span><span>GoRouter</span><span>Hive</span><span>SQLite</span><span>Mapbox SDK</span><span>ESP32</span></div></div>
@@ -868,12 +859,12 @@ button{font-family:var(--f-body);cursor:pointer;border:none;background:none}
 <section class="cta-sect" id="contact">
   <div class="wrap">
     <div class="cta-card reveal">
-      <h2>Have an idea?<br>Let's <span class="grad">build it.</span></h2>
-      <p>Tell us about your project and we'll get back to you within 24 hours with a clear plan and timeline.</p>
+      <h2 data-i18n-html="cta.h2">Have an idea?<br>Let's <span class="grad">build it.</span></h2>
+      <p data-i18n="cta.p">Tell us about your project and we'll get back to you within 24 hours with a clear plan and timeline.</p>
       <div class="cta-actions">
         <a class="btn btn--primary" href="mailto:zulfflow@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Get in Touch
+          <span data-i18n="cta.btn1">Get in Touch</span>
         </a>
         <a class="btn btn--glass" href="https://github.com/zulfflow" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
@@ -949,4 +940,108 @@ document.querySelectorAll('.glow-card').forEach(card=>{
     card.style.setProperty('--start',angle+'deg');
   });
 });
+
+/* ── Language Toggle (EN/ID) ── */
+const I18N={
+  'nav.services':['Services','Layanan'],
+  'nav.work':['Work','Karya'],
+  'nav.about':['About','Tentang'],
+  'nav.stack':['Stack','Teknologi'],
+  'nav.cta':['Start a Project','Mulai Proyek'],
+  'hero.chip':['AI Product Studio','Studio Produk AI'],
+  'hero.prefix':['We build','Kami membangun'],
+  'hero.w1':['shipped products.','produk terluncur.'],
+  'hero.w2':['AI systems.','sistem AI.'],
+  'hero.w3':['mobile apps.','aplikasi mobile.'],
+  'hero.w4':['dev tools.','alat developer.'],
+  'hero.w5':['shipped products.','produk terluncur.'],
+  'hero.sub':['From napkin sketches to production-ready systems. Full-stack engineering, AI integration, and product design — we build what others say is too complex.','Dari sketsa sederhana ke sistem siap produksi. Rekayasa full-stack, integrasi AI, dan desain produk — kami membangun apa yang orang lain anggap terlalu kompleks.'],
+  'hero.cta1':['Start a Project','Mulai Proyek'],
+  'hero.cta2':['View Our Work','Lihat Karya Kami'],
+  'trust.count':['20 Products Shipped','20 Produk Terluncur'],
+  'trust.platforms':['5 Platforms','5 Platform'],
+  'trust.stacks':['15+ Tech Stacks','15+ Stack Teknologi'],
+  'trust.count2':['20 Products Shipped','20 Produk Terluncur'],
+  'trust.platforms2':['5 Platforms','5 Platform'],
+  'trust.stacks2':['15+ Tech Stacks','15+ Stack Teknologi'],
+  'svc.label':['What We Do','Apa yang Kami Kerjakan'],
+  'svc.title':['Four pillars to ship your product.','Empat pilar untuk meluncurkan produk Anda.'],
+  'svc.sub':['We handle the full journey — from understanding your problem to launching a system your users rely on.','Kami menangani seluruh perjalanan — dari memahami masalah Anda hingga meluncurkan sistem yang diandalkan pengguna.'],
+  'svc1.t':['Ideation & Discovery','Ideasi & Eksplorasi'],
+  'svc1.d':['We listen, research, and map your idea into a clear product blueprint — scope, architecture, and a build plan you can trust.','Kami mendengarkan, meneliti, dan memetakan ide Anda menjadi cetak biru produk yang jelas — ruang lingkup, arsitektur, dan rencana pembangunan yang dapat Anda percaya.'],
+  'svc2.t':['Design & Engineering','Desain & Rekayasa'],
+  'svc2.d':['Full-stack builds across mobile, web, and desktop. Flutter, React, Python, Rust — we pick the right tool for the job.','Pembangunan full-stack untuk mobile, web, dan desktop. Flutter, React, Python, Rust — kami memilih teknologi yang tepat.'],
+  'svc3.t':['AI Integration','Integrasi AI'],
+  'svc3.d':['Embed intelligence that matters — Claude, Gemini, Whisper, computer vision, and custom models woven into your product.','Menanamkan kecerdasan yang bermakna — Claude, Gemini, Whisper, computer vision, dan model kustom yang terintegrasi ke dalam produk Anda.'],
+  'svc4.t':['Launch & Scale','Peluncuran & Skalabilitas'],
+  'svc4.d':['Cloud deployment, monitoring, and iterative improvement. We don’t just ship — we make sure it stays running.','Deploy ke cloud, pemantauan, dan peningkatan bertahap. Kami tidak sekadar meluncurkan — kami memastikan sistemnya tetap berjalan.'],
+  'work.label':['Our Work','Karya Kami'],
+  'work.title':['20 Products Shipped.','20 Produk Terluncur.'],
+  'work.all':['All','Semua'],
+  'work.enterprise':['Enterprise','Korporat'],
+  'work.product':['Products','Produk'],
+  'work.devtools':['Dev Tools','Alat Developer'],
+  'work.viewdetails':['View Details','Lihat Detail'],
+  'p.terang':['Satellite-based rural electrification platform. Dark-spot detection, GIS mapping of 240+ locations across 10 service areas.','Platform elektrifikasi pedesaan berbasis satelit. Deteksi titik gelap, pemetaan GIS 240+ lokasi di 10 area layanan.'],
+  'p.simpul':['Steiner tree optimization for medium-voltage grid expansion. Cost surface analysis across 41,000+ candidates.','Optimasi Steiner tree untuk ekspansi jaringan tegangan menengah. Analisis permukaan biaya untuk 41.000+ kandidat.'],
+  'p.risk':['Monte Carlo simulation quantifying investment risk. Zone-calibrated cost distributions validated against actual budgets.','Simulasi Monte Carlo untuk mengukur risiko investasi. Distribusi biaya terkalibrasi zona yang divalidasi terhadap anggaran aktual.'],
+  'p.sigap':['Survey compliance gateway with magic-link tokens, screenshot verification, WhatsApp blasts, and real-time leaderboard.','Gerbang kepatuhan survei dengan token magic-link, verifikasi screenshot, blast WhatsApp, dan papan peringkat real-time.'],
+  'p.simk3':['HSE management for field technicians. Safety patrols, inspections, working permits, and offline-first photo sync.','Manajemen K3 untuk teknisi lapangan. Patroli keselamatan, inspeksi, izin kerja, dan sinkronisasi foto offline-first.'],
+  'p.amanpatroli':['Security patrol monitoring with QR checkpoints, AES-encrypted offline storage, 11-role access, and incident reporting.','Pemantauan patroli keamanan dengan checkpoint QR, penyimpanan offline terenkripsi AES, 11 level akses, dan pelaporan insiden.'],
+  'p.simkar':['Fleet management with real-time GPS, pre-trip inspections, digital trip letters with QR, and automated PDF reports.','Manajemen armada dengan GPS real-time, inspeksi pra-perjalanan, surat perjalanan digital dengan QR, dan laporan PDF otomatis.'],
+  'p.thinktank':['Innovation portal with AI-powered PRD parsing, idea submission, evaluation forums, and multi-level role-based access.','Portal inovasi dengan parsing PRD berbasis AI, pengajuan ide, forum evaluasi, dan akses multi-level berbasis peran.'],
+  'p.bloodconnect':['Hospital blood bank inventory with real-time stock monitoring, QR/barcode scanning, and Cloud Firestore sync.','Inventaris bank darah rumah sakit dengan pemantauan stok real-time, pemindaian QR/barcode, dan sinkronisasi Cloud Firestore.'],
+  'p.tlk3':['Safety dashboard with 19-criteria Matlev tracker, AI assistant with function calling, and 24+ document templates.','Dashboard keselamatan dengan pelacak Matlev 19 kriteria, asisten AI dengan function calling, dan 24+ template dokumen.'],
+  'p.zuview':['WiFi spatial sensing — detect presence and track movement through walls. Rust core, ESP32 firmware, desktop/mobile apps.','Penginderaan spasial WiFi — mendeteksi keberadaan dan melacak pergerakan melalui dinding. Inti Rust, firmware ESP32, aplikasi desktop/mobile.'],
+  'p.titikbilas':['Multi-tenant SaaS laundry management with POS, Kanban tracking, courier dispatch, AI advisor, and Midtrans payments.','Manajemen laundry SaaS multi-tenant dengan POS, pelacakan Kanban, pengiriman kurir, penasihat AI, dan pembayaran Midtrans.'],
+  'p.movionics':['Motorcycle touring cockpit with GPS telemetry, five nav modes, offline maps for 10 ASEAN countries, and dashcam.','Kokpit touring motor dengan telemetri GPS, lima mode navigasi, peta offline untuk 10 negara ASEAN, dan dashcam.'],
+  'p.osngo':['Adaptive learning for Indonesia’s Science Olympiad. Socratic AI tutor, Elo scoring, and 1,000+ official questions.','Pembelajaran adaptif untuk Olimpiade Sains Indonesia. Tutor AI Sokratis, skor Elo, dan 1.000+ soal resmi.'],
+  'p.begenoteai':['AI voice intelligence — record, transcribe via Groq Whisper, analyze with Gemini. Summaries, action items, mind maps.','Kecerdasan suara AI — rekam, transkripsi via Groq Whisper, analisis dengan Gemini. Ringkasan, item aksi, peta pikiran.'],
+  'p.aiarena':['Auto-battler where AI generates characters from text prompts. Balanced PvP, pet care mechanics, and matchmaking.','Auto-battler di mana AI menghasilkan karakter dari prompt teks. PvP seimbang, mekanik perawatan hewan, dan matchmaking.'],
+  'p.gascode':['AI coding agent with 19 tools, 24 skills, 20+ providers, and workflow engine. CLI, TUI, and Electron desktop.','Agen coding AI dengan 19 alat, 24 skill, 20+ penyedia, dan mesin workflow. CLI, TUI, dan desktop Electron.'],
+  'p.supervisiai':['AI product dev platform with adaptive Smart Chat, code gen, BYOK encryption, and device-flow OAuth for CLI auth.','Platform pengembangan produk AI dengan Smart Chat adaptif, generasi kode, enkripsi BYOK, dan OAuth device-flow untuk autentikasi CLI.'],
+  'p.jarvis':['Three-layer AI executive assistant — MCP tool servers, DAG executor, and voice-enabled web with multi-persona routing.','Asisten eksekutif AI tiga lapis — server alat MCP, eksekutor DAG, dan web berkemampuan suara dengan routing multi-persona.'],
+  'p.gaspdf':['Client-side PDF toolkit with 19 tools — merge, split, OCR, sign, AI summary. Zero uploads, 100% browser-based.','Toolkit PDF sisi klien dengan 19 alat — gabung, pisah, OCR, tanda tangan, ringkasan AI. Tanpa unggah, 100% berbasis browser.'],
+  'about.label':['About','Tentang'],
+  'about.title':['Built by an engineer who ships.','Dibangun oleh engineer yang selalu meluncurkan produk.'],
+  'about.s1':['Projects Shipped','Produk Terluncur'],
+  'about.s2':['Platforms','Platform'],
+  'about.s3':['Tech Stacks','Stack Teknologi'],
+  'about.s4':['Experience','Pengalaman'],
+  'stack.label':['Technology','Teknologi'],
+  'stack.title':['We pick the right tool for the job.','Kami memilih teknologi yang tepat untuk setiap tugas.'],
+  'cta.p':['Tell us about your project and we’ll get back to you within 24 hours with a clear plan and timeline.','Ceritakan proyek Anda dan kami akan menghubungi Anda dalam 24 jam dengan rencana dan jadwal yang jelas.'],
+  'cta.btn1':['Get in Touch','Hubungi Kami']
+};
+const I18N_HTML={
+  'about.p1':['<strong>Zul Labs</strong> is the studio practice of <strong>Zulhendra</strong> — a full-stack engineer and AI developer with 15 years at PT PLN, Indonesia’s national power utility. Currently serving as Officer K3LK at UP3 Sibolga while pursuing a Master’s in Electrical Engineering at Institut Teknologi PLN.','<strong>Zul Labs</strong> adalah praktik studio dari <strong>Zulhendra</strong> — seorang engineer full-stack dan pengembang AI dengan pengalaman 15 tahun di PT PLN, utilitas listrik nasional Indonesia. Saat ini menjabat sebagai Officer K3LK di UP3 Sibolga sambil menempuh Magister Teknik Elektro di Institut Teknologi PLN.'],
+  'about.p2':['From enterprise systems that digitize grid operations to consumer products and developer tools — we bring the same rigor to every build. If you have an idea and need someone who can take it from concept to production, we’re your team.','Dari sistem korporat yang mendigitalisasi operasi jaringan listrik hingga produk konsumen dan alat developer — kami membawa ketelitian yang sama di setiap proyek. Jika Anda punya ide dan butuh seseorang yang bisa membawanya dari konsep ke produksi, kami tim yang tepat.'],
+  'cta.h2':['Have an idea?<br>Let’s <span class="grad">build it.</span>','Punya ide?<br>Ayo <span class="grad">bangun bersama.</span>']
+};
+const langBtn=document.getElementById('langBtn');
+let curLang=localStorage.getItem('zullabs-lang')||'en';
+function setLang(lang){
+  curLang=lang;
+  const idx=lang==='id'?1:0;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(I18N[k])el.textContent=I18N[k][idx];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const k=el.getAttribute('data-i18n-html');
+    if(I18N_HTML[k])el.innerHTML=I18N_HTML[k][idx];
+  });
+  const spans=langBtn.querySelectorAll('span');
+  if(lang==='id'){
+    spans[0].className='lang-inactive';spans[0].textContent='EN';
+    spans[2].className='lang-active';spans[2].textContent='ID';
+  }else{
+    spans[0].className='lang-active';spans[0].textContent='EN';
+    spans[2].className='lang-inactive';spans[2].textContent='ID';
+  }
+  localStorage.setItem('zullabs-lang',lang);
+  document.documentElement.setAttribute('lang',lang);
+}
+langBtn.addEventListener('click',()=>setLang(curLang==='en'?'id':'en'));
+if(curLang==='id')setLang('id');
 </script>
